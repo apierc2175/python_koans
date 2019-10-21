@@ -17,8 +17,23 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    list = [a, b, c]
+    if a < 1 or b < 1 or c < 1:
+        raise(TriangleError)
+    elif True in list:
+       raise(TriangleError)
+    if list.count(1) == 2 or list.count(2) == 2:
+       raise(TriangleError)
+
+    if a == b and a == c and b == c:
+        return 'equilateral'
+    elif list.count(a) == 2 or list.count(c) == 2:
+        return 'isosceles'
+    else:
+        return 'scalene'
+
+
+
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
